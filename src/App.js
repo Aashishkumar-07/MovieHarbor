@@ -261,7 +261,7 @@ function MovieDetails({ watched, selectedId, onCloseMovie, onAddWatched }) {
       async function getMovieDetails() {
         setIsLoading(true);
         const res = await fetch(
-          `http://www.omdbapi.com/?apikey=${key}&i=${selectedId}`
+          `https://www.omdbapi.com/?apikey=${key}&i=${selectedId}`
         );
         const data = await res.json();
         setMovie(data);
@@ -387,11 +387,11 @@ function WatchedSummary({ watched }) {
         </p>
         <p>
           <span>⭐️</span>
-          <span>{avgImdbRating}</span>
+          <span>{avgImdbRating.toFixed(2)}</span>
         </p>
         <p>
           <span>🌟</span>
-          <span>{avgUserRating}</span>
+          <span>{avgUserRating.toFixed(2)}</span>
         </p>
         <p>
           <span>⏳</span>

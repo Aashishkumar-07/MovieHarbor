@@ -18,7 +18,7 @@ export function useMovies(query) {
           setIsLoading(true);
           setError(""); //Setting Error Message as Empty String
           const res = await fetch(
-            `http://www.omdbapi.com/?apikey=${key}&s=${query}`,
+            `https://www.omdbapi.com/?apikey=${key}&s=${query}`,
             { signal: controller.signal }
           );
           const data = await res.json();
